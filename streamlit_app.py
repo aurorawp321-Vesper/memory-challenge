@@ -58,10 +58,8 @@ game_html = """
             s.play().catch(() => {});
         }
 
-        // 按钮触发音频授权并开始预看
         function startPreview() {
             document.getElementById('start-screen').style.display = 'none';
-            // 随便播个静音或极短音以激活音频上下文
             playSound('sound-flip'); 
             initGame();
         }
@@ -81,7 +79,7 @@ game_html = """
                 grid.appendChild(c);
             });
 
-            let previewSeconds = 6; // 记忆时长延长至6秒
+            let previewSeconds = 6;
             document.getElementById('timer').innerText = "06.00s";
             
             const previewInterval = setInterval(() => {
@@ -143,3 +141,6 @@ game_html = """
     </script>
 </body>
 </html>
+"""
+
+components.html(game_html, height=800)
